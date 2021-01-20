@@ -4,7 +4,7 @@
 import os,udkanbun
 PACKAGE_DIR=os.path.abspath(os.path.dirname(__file__))
 DOWNLOAD_DIR=os.path.join(PACKAGE_DIR,"download")
-MODEL_URL="https://raw.githubusercontent.com/KoichiYasuoka/GuwenCOMBO/master/guwencombo/download/"
+MODEL_URL="https://raw.githubusercontent.com/KoichiYasuoka/GuwenCOMBO/main/guwencombo/download/"
 filesize={}
 with open(os.path.join(DOWNLOAD_DIR,"filesize.txt"),"r") as f:
   r=f.read()
