@@ -66,7 +66,7 @@ class GuwenAPI(object):
             j=t[9][i+9:]
             t[9]+="|Original="+t[1]
             t[1]=j
-        e.append(Token(id=int(t[0]),token=t[1],lemma=t[2],upostag=t[3],xpostag=t[4],feats=t[5],misc=t[9]))
+        e.append(Token(id=int(t[0]),token=t[1],lemma=t[2],upostag=t[3],xpostag=t[4],misc=t[9]))
     for s in u:
       for t in s.tokens:
         if t.deprel=="root":
