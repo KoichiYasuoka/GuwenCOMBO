@@ -90,11 +90,6 @@ Tokenizer, POS-Tagger, and Dependency-Parser for Classical Chinese Texts (漢文
 
 `translate()` and `reorder()` are borrowed from those of [UD-Kundoku](https://github.com/KoichiYasuoka/UD-Kundoku).
 
-You can simply use `udkundoku` on the command line:
-```sh
-echo 不入虎穴不得虎子 | udkundoku -j
-```
-
 ## Installation for Linux
 
 ```sh
