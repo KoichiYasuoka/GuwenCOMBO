@@ -79,7 +79,7 @@ class GuwenAPI(object):
         if i>=0:
           t.token=t.misc[i+10:]
           t.misc=t.misc[0:i]
-    return "".join([sentence2conllu(s,False).serialize() for s in u])
+    return "".join([sentence2conllu(s,False).serialize() for s in u]).replace("NounType=Class","NounType=Clf")
 
 def load(BERT=True,Danku=False):
   model="guwen-combo.tar.gz" if BERT else "guwen-combo-small.tar.gz"
