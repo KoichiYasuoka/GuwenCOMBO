@@ -2,7 +2,7 @@
 
 # GuwenCOMBO
 
-Tokenizer, POS-Tagger, and Dependency-Parser for Classical Chinese Texts (漢文/文言文), working with [COMBO-pytorch](https://github.com/ipipan/combo).
+Tokenizer, POS-Tagger, and Dependency-Parser for Classical Chinese Texts (漢文/文言文), working with [COMBO-pytorch](https://gitlab.clarin-pl.eu/syntactic-tools/combo).
 
 ## Basic usage
 
