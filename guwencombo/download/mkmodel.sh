@@ -48,8 +48,8 @@ while True:
     c=[]
 ' > simplified.conllu
         case $M in
-        *-small) python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --training_data_path traditional.conllu --targets deprel,head,upostag,feats --features token,char,xpostag,lemma ;;
-        *) python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --pretrained_transformer_name ethanyt/guwenbert-base --training_data_path simplified.conllu --targets deprel,head,upostag,feats --features token,char,xpostag,lemma ;;
+        *-small) python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --config_path config.template.jsonnet --training_data_path traditional.conllu --targets deprel,head,upostag,feats --features token,char,xpostag,lemma ;;
+        *) python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --config_path config.template.jsonnet --pretrained_transformer_name ethanyt/guwenbert-base --training_data_path simplified.conllu --targets deprel,head,upostag,feats --features token,char,xpostag,lemma ;;
         esac
         cp `ls -1t /tmp/allennlp*/model.tar.gz | head -1` $M.tar.gz
         split -a 1 -b 83886080 --numeric-suffixes=1 $M.tar.gz $M.tar.gz.
