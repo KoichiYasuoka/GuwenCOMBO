@@ -35,7 +35,7 @@ class GuwenCOMBO(udkanbun.UDKanbun):
     if s<0:
       from unidic_combo import download
       download(MODEL_URL,model,DOWNLOAD_DIR)
-    self.model=unidic_combo.predict.SemanticMultitaskPredictor.from_pretrained(f)
+    self.model=unidic_combo.predict.COMBO.from_pretrained(f)
     self.udpipe=GuwenAPI(self.model,self.simplified)
 
 class GuwenAPI(object):
