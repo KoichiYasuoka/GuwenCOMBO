@@ -1,5 +1,8 @@
 #! /bin/sh
-for M in guwen-combo guwen-combo-small
+if [ $# -eq 0 ]
+then set guwen-combo-small guwen-combo
+fi
+for M
 do if [ -s $M.tar.gz ]
    then continue
    elif [ -s $M.tar.gz.1 ]
