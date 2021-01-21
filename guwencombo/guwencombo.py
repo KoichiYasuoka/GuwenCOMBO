@@ -49,7 +49,7 @@ class GuwenAPI(object):
     for s in conllu.split("\n"):
       if s=="" or s.startswith("#"):
         if e!=[]:
-          u.extend(self.model([Sentence(tokens=e)]))
+          u.append(Sentence(tokens=e))
           e=[]
       else:
         t=s.split("\t")
@@ -67,6 +67,7 @@ class GuwenAPI(object):
             t[9]+="|Original="+t[1]
             t[1]=j
         e.append(Token(id=int(t[0]),token=t[1],lemma=t[2],upostag=t[3],xpostag=t[4],misc=t[9]))
+    u=self.model(u)
     for s in u:
       for t in s.tokens:
         if t.deprel=="root":
