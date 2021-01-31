@@ -83,7 +83,7 @@ class GuwenAPI(object):
     return "".join([sentence2conllu(s,False).serialize() for s in u])
 
 def load(BERT="base",Danku=False):
-  if BERT=="base":
+  if BERT=="base" or BERT==True:
     model="guwen-combo.tar.gz"
   elif BERT=="large":
     model="guwen-combo-large.tar.gz"
