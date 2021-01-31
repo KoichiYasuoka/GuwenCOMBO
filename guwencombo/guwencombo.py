@@ -24,7 +24,7 @@ class GuwenCOMBO(udkanbun.UDKanbun):
     self.mecab=Tagger("-r "+os.path.join(udkanbun.PACKAGE_DIR,"mecabrc")+" -d "+os.path.join(udkanbun.PACKAGE_DIR,"mecab-kanbun"))
     if model==None:
       model="guwen-combo.tar.gz"
-    self.simplified=(model=="guwen-combo.tar.gz")
+    self.simplified=(model!="guwen-combo-small.tar.gz")
     f=os.path.join(DOWNLOAD_DIR,model)
     try:
       s=os.path.getsize(f)
@@ -82,7 +82,13 @@ class GuwenAPI(object):
           t.misc=t.misc[0:i]
     return "".join([sentence2conllu(s,False).serialize() for s in u])
 
-def load(BERT=True,Danku=False):
-  model="guwen-combo.tar.gz" if BERT else "guwen-combo-small.tar.gz"
+def load(BERT="base",Danku=False):
+  if BERT=="base":
+    model="guwen-combo.tar.gz"
+  elif BERT=="large":
+    model="guwen-combo-large.tar.gz"
+  else:
+    model="guwen-combo-small.tar.gz"
   nlp=GuwenCOMBO(Danku,model)
   return nlp
+
