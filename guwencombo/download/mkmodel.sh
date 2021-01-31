@@ -1,6 +1,6 @@
 #! /bin/sh
 if [ $# -eq 0 ]
-then set guwen-combo-small guwen-combo
+then set guwen-combo-small guwen-combo guwen-combo-large
 fi
 for M
 do if [ -s $M.tar.gz ]
@@ -47,15 +47,19 @@ while True:
       print("\n".join(c)+"\n")
     c=[]
 ' > simplified.conllu
-
-# AllenNLP < 2 recommended for training
+        B=83886080
         case $M in
-        *-small) python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --config_path config.template.jsonnet --training_data_path traditional.conllu --targets deprel,head,upostag,feats --features token,char,xpostag,lemma ;;
-        *) python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --config_path config.template.jsonnet --pretrained_transformer_name ethanyt/guwenbert-base --training_data_path simplified.conllu --targets deprel,head,upostag,feats --features token,char,xpostag,lemma ;;
+        *-small) P='--training_data_path traditional.conllu' ;;
+        *-large) P='--training_data_path simplified.conllu --pretrained_transformer_name ethanyt/guwenbert-large'
+                 B=94371840 ;;
+        *) P='--training_data_path simplified.conllu --pretrained_transformer_name ethanyt/guwenbert-base' ;;
         esac
 
+# AllenNLP < 2 recommended for training
+        python3 -m unidic_combo.main --mode train --cuda_device 0 --num_epochs 100 --config_path config.template.jsonnet $P --targets deprel,head,upostag,feats --features token,char,xpostag,lemma
         cp `ls -1t /tmp/allennlp*/model.tar.gz | head -1` $M.tar.gz
-        split -a 1 -b 83886080 --numeric-suffixes=1 $M.tar.gz $M.tar.gz.
+        split -a 1 -b $B --numeric-suffixes=1 $M.tar.gz $M.tar.gz.
    fi
 done
+ls -ltr *.tar.gz | awk '{printf("%s %d\n",$NF,$5)}' > filesize.txt
 exit 0
