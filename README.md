@@ -119,7 +119,7 @@ chmod 755 /tmp/clang
 env PATH="/tmp:$PATH" pip3 install jsonnet --user
 ```
 
-If you fail to install [fugashi](https://github.com/polm/fugashi), try to install [MeCab](https://github.com/taku910/mecab) before installing UniDic-COMBO:
+If you fail to install [fugashi](https://github.com/polm/fugashi), try to install [MeCab](https://github.com/taku910/mecab) before installing GuwenCOMBO:
 
 ```sh
 cd /tmp
