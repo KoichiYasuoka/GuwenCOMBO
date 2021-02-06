@@ -19,10 +19,10 @@ case "$F" in
 *) echo $F not installed >&2
    exit 2 ;;
 esac
-ALLENNLP_VERSION=1.3.0
+ALLENNLP_VERSION=1.4.1
 TOKENIZERS_VERSION=0.9.4
 export ALLENNLP_VERSION TOKENIZERS_VERSION
 pip3.7 install 'torch>=1.6.0' -f https://github.com/KoichiYasuoka/CygTorch
 curl -L https://raw.githubusercontent.com/KoichiYasuoka/CygTorch/master/installer/allennlp.sh | sh -x
-pip3.7 install tokenizers==$TOKENIZERS_VERSION fugashi==1.0.1 guwencombo
+pip3.7 install tokenizers==$TOKENIZERS_VERSION guwencombo
 exit 0
