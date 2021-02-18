@@ -24,7 +24,7 @@ while True:
       print("\n".join(c)+"\n")
     c=[]
 ' | tee traditional.conllu | python3 -c '
-from guwencombo.simplify import simplify
+from udkanbun.simplify import simplify
 c=[]
 while True:
   try:

@@ -57,7 +57,7 @@ class GuwenAPI(object):
           i=t[9].find("Translit=")
           if i<0:
             if t[4]=="n,名詞,*,*":
-              from guwencombo.simplify import simplify
+              from udkanbun.simplify import simplify
               if t[1] in simplify:
                 j=simplify[t[1]]
                 t[9]=("" if t[9]=="_" else t[9]+"|")+"Translit="+j+"|Original="+t[1]
