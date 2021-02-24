@@ -40,7 +40,7 @@ Tokenizer, POS-Tagger, and Dependency-Parser for Classical Chinese Texts (漢文
 >>> f.close()
 ```
 ![trial.svg](https://raw.githubusercontent.com/KoichiYasuoka/GuwenCOMBO/main/trial.png)
-`guwencombo.load()` has two options `guwencombo.load(BERT="base",Danku=False)`. With the option `BERT="large"` the pipeline utilizes [GuwenBERT-large](https://huggingface.co/ethanyt/guwenbert-large). With the option `Danku=True` the pipeline tries to segment sentences automatically. `to_tree()` and `to_svg()` are borrowed from those of [UD-Kanbun](https://github.com/KoichiYasuoka/UD-Kanbun).
+`guwencombo.load()` has two options `guwencombo.load(BERT="guwenbert-base",Danku=False)`. With the option `BERT="guwenbert-large"` the pipeline utilizes [GuwenBERT-large](https://huggingface.co/ethanyt/guwenbert-large). With the option `Danku=True` the pipeline tries to segment sentences automatically. `to_tree()` and `to_svg()` are borrowed from those of [UD-Kanbun](https://github.com/KoichiYasuoka/UD-Kanbun).
 
 ## Kundoku usage
 

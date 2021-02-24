@@ -80,10 +80,10 @@ class GuwenAPI(object):
           t.misc=t.misc[0:i]
     return "".join([sentence2conllu(s,False).serialize() for s in u])
 
-def load(BERT="base",Danku=False):
-  if BERT=="base" or BERT==True:
+def load(BERT="guwenbert-base",Danku=False):
+  if BERT in ["guwenbert-base","base",True]:
     model="guwen-combo.tar.gz"
-  elif BERT=="large":
+  elif BERT in ["guwenbert-large","large"]:
     model="guwen-combo-large.tar.gz"
   else:
     model="guwen-combo-small.tar.gz"
