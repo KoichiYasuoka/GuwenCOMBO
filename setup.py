@@ -5,7 +5,7 @@ URL="https://github.com/KoichiYasuoka/GuwenCOMBO"
 
 setuptools.setup(
   name="guwencombo",
-  version="1.0.8",
+  version="1.0.9",
   description="Tokenizer POS-tagger and Dependency-parser for Classical Chinese",
   long_description=long_description,
   long_description_content_type="text/markdown",
