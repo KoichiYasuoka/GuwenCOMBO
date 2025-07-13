@@ -5,7 +5,7 @@ URL="https://github.com/KoichiYasuoka/GuwenCOMBO"
 
 setuptools.setup(
   name="guwencombo",
-  version="1.5.7",
+  version="1.5.8",
   description="Tokenizer POS-tagger and Dependency-parser for Classical Chinese",
   long_description=long_description,
   long_description_content_type="text/markdown",
@@ -15,7 +15,7 @@ setuptools.setup(
   license="GPL",
   keywords="NLP Chinese",
   packages=setuptools.find_packages(),
-  install_requires=["udkundoku>=2.2.9","unidic_combo>=1.4.8"],
+  install_requires=["udkundoku>=2.2.9","unidic_combo>=1.4.9"],
   python_requires=">=3.6",
   package_data={"guwencombo":["download/*.txt"]},
   classifiers=[
