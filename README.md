@@ -93,6 +93,7 @@ Tokenizer, POS-Tagger, and Dependency-Parser for Classical Chinese Texts (漢文
 ## Installation for Linux
 
 ```sh
+pip3 install git+https://github.com/allenai/allennlp
 pip3 install guwencombo
 ```
 
@@ -102,32 +103,6 @@ Make sure to get `python37-devel` `python37-pip` `python37-cython` `python37-num
 ```sh
 curl -L https://raw.githubusercontent.com/KoichiYasuoka/UniDic-COMBO/master/cygwin64.sh | sh
 pip3.7 install guwencombo
-```
-
-## Installation for macOS
-
-```sh
-g++ --version
-pip3 install guwencombo --user
-python3 -m spacy download en_core_web_sm --user
-```
-
-If you fail to install [Jsonnet](https://github.com/google/jsonnet), try below before installing GuwenCOMBO:
-
-```sh
-( echo '#! /bin/sh' ; echo 'exec gcc `echo $* | sed "s/-arch [^ ]*//g"`' ) > /tmp/clang
-chmod 755 /tmp/clang
-env PATH="/tmp:$PATH" pip3 install jsonnet --user
-```
-
-If you fail to install [fugashi](https://github.com/polm/fugashi), try to install [MeCab](https://github.com/taku910/mecab) before installing GuwenCOMBO:
-
-```sh
-cd /tmp
-git clone --depth=1 https://github.com/taku910/mecab
-cd mecab/mecab
-./configure --with-charset=UTF8
-make && sudo make install
 ```
 
 ## Reference
