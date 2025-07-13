@@ -93,7 +93,7 @@ Tokenizer, POS-Tagger, and Dependency-Parser for Classical Chinese Texts (漢文
 ## Installation for Linux
 
 ```sh
-pip3 install git+https://github.com/allenai/allennlp
+pip3 install git+https://github.com/allenai/allennlp "transformers<4.31"
 pip3 install guwencombo
 ```
 
